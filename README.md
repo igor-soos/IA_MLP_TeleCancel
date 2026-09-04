@@ -1,21 +1,23 @@
-# MLP + MLflow + API de predição de churn
+# Projeto TeleCancel
 
-Projeto acadêmico de classificação binária que utiliza uma rede neural MLP
+Projeto de classificação binária que utiliza uma rede neural MLP
 para prever o cancelamento de clientes de telecomunicações. Cinco
 configurações são treinadas e comparadas no MLflow; o melhor pipeline é
 recuperado como artifact e disponibilizado por uma API FastAPI local.
+
+## Membros
+- Guilherme Cezarino Simões RM557724
+- Fabrini Soares RM557813
+- Igor Soos Rocha Ribeiro RM556010
 
 ## Problema e dataset
 
 - Dataset: IBM Telco Customer Churn.
 - Fonte: [IBM Telco Customer Churn](https://github.com/IBM/telco-customer-churn-on-icp4d/tree/master/data).
 - Registros: 7.043 clientes.
-- Target: `Churn` (`Yes` ou `No`).
+- Target: Churn (Yes or No).
 - Objetivo: identificar clientes com maior risco de cancelamento.
 - Tipo: classificação binária.
-
-O arquivo utilizado está em `data/telco_churn.csv`, permitindo reproduzir os
-experimentos sem baixar dados adicionais.
 
 ## Fluxo da solução
 
@@ -24,7 +26,7 @@ CSV -> preparação dos dados -> cinco MLPs -> MLflow -> seleção do MLP-05
     -> carregamento do artifact -> FastAPI -> previsão
 ```
 
-O pré-processamento e o MLP ficam no mesmo `Pipeline` do Scikit-learn. Por
+O pré-processamento e o MLP ficam no mesmo Pipeline do Scikit-learn. Por
 isso, a API recebe as 19 características originais do cliente e o artifact
 aplica automaticamente imputação, padronização, one-hot encoding e predição.
 
@@ -113,11 +115,9 @@ Na raiz do projeto:
 ```powershell
 py -3.12 -m venv .venv
 ```
-
 ```powershell
 .\.venv\Scripts\python.exe -m pip install --upgrade pip
 ```
-
 ```powershell
 .\.venv\Scripts\python.exe -m pip install -r requirements.txt
 ```
@@ -276,6 +276,7 @@ Nos terminais do MLflow e do Uvicorn, pressione `Ctrl+C`.
 
 ## Solução de problemas
 
+- `LocalHost com erro 500`: Execute 
 - `mlflow.db nao encontrado`: execute `python -m src.train_experiments`.
 - `config/best_model.json nao encontrado`: execute
   `python -m src.select_best_model`.
