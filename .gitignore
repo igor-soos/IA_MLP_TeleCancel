@@ -1,0 +1,13 @@
+.venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.idea/
+.vscode/
+.DS_Store
+mlruns/
+mlartifacts/
+*.db
+docs/experiment_validation.json
+config/best_model.json

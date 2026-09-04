@@ -1,0 +1,77 @@
+{
+  "dataset": {
+    "file": "telco_churn.csv",
+    "sha256": "16320c9c1ec72448db59aa0a26a0b95401046bef5d02fd3aeb906448e3055e91",
+    "rows": 7043,
+    "columns": 21,
+    "duplicate_rows": 0,
+    "duplicate_customer_ids": 0
+  },
+  "problem": {
+    "type": "binary_classification",
+    "target": "Churn",
+    "positive_class": "Yes",
+    "target_counts": {
+      "No": 5174,
+      "Yes": 1869
+    },
+    "target_percentages": {
+      "No": 73.46,
+      "Yes": 26.54
+    }
+  },
+  "data_quality": {
+    "missing_by_column_after_blank_normalization": {
+      "TotalCharges": 11
+    }
+  },
+  "features": {
+    "identifier_to_remove": "customerID",
+    "numeric": [
+      "tenure",
+      "MonthlyCharges",
+      "TotalCharges"
+    ],
+    "categorical": [
+      "gender",
+      "SeniorCitizen",
+      "Partner",
+      "Dependents",
+      "PhoneService",
+      "MultipleLines",
+      "InternetService",
+      "OnlineSecurity",
+      "OnlineBackup",
+      "DeviceProtection",
+      "TechSupport",
+      "StreamingTV",
+      "StreamingMovies",
+      "Contract",
+      "PaperlessBilling",
+      "PaymentMethod"
+    ],
+    "unique_values_by_column": {
+      "customerID": 7043,
+      "gender": 2,
+      "SeniorCitizen": 2,
+      "Partner": 2,
+      "Dependents": 2,
+      "tenure": 73,
+      "PhoneService": 2,
+      "MultipleLines": 3,
+      "InternetService": 3,
+      "OnlineSecurity": 3,
+      "OnlineBackup": 3,
+      "DeviceProtection": 3,
+      "TechSupport": 3,
+      "StreamingTV": 3,
+      "StreamingMovies": 3,
+      "Contract": 3,
+      "PaperlessBilling": 2,
+      "PaymentMethod": 4,
+      "MonthlyCharges": 1585,
+      "TotalCharges": 6530,
+      "Churn": 2
+    }
+  }
+}
