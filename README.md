@@ -10,6 +10,9 @@ recuperado como artifact e disponibilizado por uma API FastAPI local.
 - Fabrini Soares RM557813
 - Igor Soos Rocha Ribeiro RM556010
 
+## Demonstração no Youtube
+https://youtu.be/rmU72531VBs?is=MqdmuuInDTnnYAzl
+
 ## Problema e dataset
 
 - Dataset: IBM Telco Customer Churn.
